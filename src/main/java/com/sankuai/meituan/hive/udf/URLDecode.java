@@ -20,19 +20,9 @@ public class URLDecode extends UDF {
     public URLDecode() {
     }
 
-    /**
-     * 默认编码utf-8
-     * 
-     * @param key
-     * @return
-     */
     public static String evaluate(final String key) {
-        return evaluate(key, "utf-8");
-    }
-
-    public static String evaluate(final String key, final String enc) {
         try {
-            return URLDecoder.decode(key, enc);
+            return URLDecoder.decode(key, "utf-8");
         } catch (UnsupportedEncodingException e) {
             return "";
         }
